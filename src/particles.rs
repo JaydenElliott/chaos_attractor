@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use crate::{WINDOW_SIZE, attractors};
+use crate::attractors;
 use rand::prelude::random;
 
 ////////////////////////////////////////////////////
@@ -10,7 +10,6 @@ const PARTICLE_SIZE: f32 = 1.0;
 const N_PARTCLES: u32 = 500;
 
 const T: f32 = 0.009; // time value in differential eqs
-
 
 
 ////////////////////////////////////////////////////
