@@ -6,7 +6,7 @@ pub struct LorenzAttractor {
 }
 
 pub const LA_DEFAULT: LorenzAttractor = LorenzAttractor {
-    a: 100.0,
+    a: 10.0,
     b: 28.0,
     c: 2.66
 };
