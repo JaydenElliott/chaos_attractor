@@ -8,8 +8,11 @@ use rand::prelude::random;
 
 pub const PARTICLE_SIZE: f32 = 0.2;
 
-const N_PARTCLES: u32 = 2;
+const N_PARTCLES: u32 = 2000;
 
+// Increasing this leads to particles spawning further away from the center
+// and subsequently having a higher probability of converging to infinity
+// and disapearing ... i.e. not cool.
 const RANDOM_SPAWNER_MULTIPLIER: f32 = 1.0;
 
 ////////////////////////////////////////////////////
@@ -55,13 +58,7 @@ pub fn spawn_particle(commands: &mut Commands, materials: &Res<Materials>) {
 ///////////////////////////////////////////////////
 
 pub fn particle_movement(mut query: Query<(&Particle, &mut Transform)>) {
-    for (particle, mut transform) in query.iter_mut() {
-        if particle.new {
-            transform.translation.x -= 0.1;
-            transform.translation.y += 0.1;
-        } else {
-            transform.translation = attractors::solve_lorenz(&transform, attractors::LORENZ_DEFAULT);
-        }
-        // println!("{:?}", transform.translation);
+    for (_, mut transform) in query.iter_mut() {
+        transform.translation = attractors::solve_lorenz(&transform, attractors::LORENZ_DEFAULT);
     }
 }

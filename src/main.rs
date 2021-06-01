@@ -9,6 +9,7 @@ mod attractors;
 mod particles;
 mod spawner;
 
+
 const WINDOW_HEIGHT: f32 = 800.0;
 const WINDOW_WIDTH: f32 = 1200.0;
 const CAMERA_SCALE: f32 = 0.08;
@@ -37,7 +38,6 @@ fn main() {
             SystemStage::single(particles::spawn_particles.system()),
         )
         .add_system(particles::particle_movement.system())
-        // .add_system(spawner::spawner_system.system())
         .add_system_set(
             SystemSet::new()
                 .with_run_criteria(FixedTimestep::step(0.1))

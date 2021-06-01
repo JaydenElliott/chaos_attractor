@@ -1,7 +1,7 @@
 use crate::particles::{Materials, Particle, PARTICLE_SIZE};
-// use crate::{BOTTOM_LEFT, BOTTOM_RIGHT, TOP_LEFT, TOP_RIGHT};
 use bevy::prelude::*;
 
+// Particle spawner system for spacebar clicking events
 pub fn spawner_system(
     mut commands:  Commands,
     mut materials: Res<Materials>,
