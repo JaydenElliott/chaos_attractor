@@ -8,7 +8,7 @@ use rand::prelude::random;
 
 pub const PARTICLE_SIZE: f32 = 0.2;
 
-const N_PARTCLES: u32 = 2000;
+const N_PARTCLES: u32 = 2;
 
 const RANDOM_SPAWNER_MULTIPLIER: f32 = 1.0;
 
