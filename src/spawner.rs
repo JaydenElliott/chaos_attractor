@@ -4,7 +4,7 @@ use bevy::prelude::*;
 // Particle spawner system for spacebar clicking events
 pub fn spawner_system(
     mut commands:  Commands,
-    mut materials: Res<Materials>,
+    materials: Res<Materials>,
     keyboard_input: Res<Input<KeyCode>>,
 ) {
     if keyboard_input.pressed(KeyCode::Space) {

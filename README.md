@@ -18,5 +18,6 @@ Holding the spacebar adds particles to the screen. The visuals for this are much
 
 ## Demo
 
-Wait for ~15secs, it gets pretty cool :D
+Wait ~15secs, it gets pretty cool :D
+
 ![](./lorenz_demo.gif)

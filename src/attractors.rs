@@ -10,10 +10,19 @@ pub struct AttractorConstants {
 // LORENZ ATTRACTOR
 ///////////////////////////////////////////////////
 
+#[allow(dead_code)]
 pub const LORENZ_DEFAULT: AttractorConstants = AttractorConstants {
     a: 10.0,
     b: 28.0,
     c: 2.66,
+    t: 0.01,
+};
+
+// This also works well
+pub const LORENZ_TEST: AttractorConstants = AttractorConstants {
+    a: 10.0,
+    b: 28.0,
+    c: 3.66,
     t: 0.01,
 };
 

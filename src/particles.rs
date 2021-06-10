@@ -13,7 +13,8 @@ const N_PARTCLES: u32 = 2000;
 // Increasing this leads to particles spawning further away from the center
 // and subsequently having a higher probability of converging to infinity
 // and disapearing ... i.e. not cool.
-const RANDOM_SPAWNER_MULTIPLIER: f32 = 1.0;
+// 1.0 & 5.0 work well :)
+const RANDOM_SPAWNER_MULTIPLIER: f32 = 5.0;
 
 ////////////////////////////////////////////////////
 // PARTICLE COMPONENT AND MATERIAL DEFINITIONS
@@ -59,6 +60,6 @@ pub fn spawn_particle(commands: &mut Commands, materials: &Res<Materials>) {
 
 pub fn particle_movement(mut query: Query<(&Particle, &mut Transform)>) {
     for (_, mut transform) in query.iter_mut() {
-        transform.translation = attractors::solve_lorenz(&transform, attractors::LORENZ_DEFAULT);
+        transform.translation = attractors::solve_lorenz(&transform, attractors::LORENZ_TEST);
     }
 }
